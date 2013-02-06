@@ -10,6 +10,10 @@ function Hex:initialize( texture )
 end
 
 function Hex:setTerrainType( terrain )
+	if terrain != nil then
+		return terrain
+	end
+
 	terrainTypes = {
 		"grass"       --2
 		, "hills"     --3
@@ -19,8 +23,23 @@ function Hex:setTerrainType( terrain )
 		, "water"     -- X
 		, "mountains" -- X
 	}
+
+	return terrainTypes[ math.random(7) ]
 end
 
 function Hex:setEnemyType( enemy )
+	if enemy != nil then
+		return enemy
+	end
 
+	enemyTypes = {
+		"orc"
+		, "keep"
+		, "mage"
+		, "dungeon"
+		, "city"
+		, "dragon"
+		, "shrine"
+	}
+	return enemyTypes[ math.random(7) ]
 end
