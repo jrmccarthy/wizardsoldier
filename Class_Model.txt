@@ -1,0 +1,72 @@
+BaseCard
+--
+- Render()
+- Play()
+- Play_Advanced()
+- Can_Play()
+
+BaseDeck
+--
+- Gain()
+- Trash()
+- Shuffle()
+- Library <undrawn cards>
+- Hand <drawn unplayed cards>
+- Graveyard <drawn played cards>
+
+GameState
+--
+- Players
+- CurrentPlayer
+- Map
+- Turn Order
+- Day/Night
+- Global Trash <BaseDeck>
+- Turn [?]
+- Extra Rules [?]
+- Common Skills <BaseDeck>
+- Spells <BaseDeck>
+- Advanced Actions <BaseDeck>
+- Relics <BaseDeck>
+- Units <BaseDeck>
+- Tactics <BaseDeck>
+- Enemies <BaseDeck>
+- Mana Source <BaseDeck>
+
+Player
+--
+- Knight
+- Deck <BaseDeck>
+- Units <BaseDeck>
+- Common Skills <BaseDeck>
+- Level/XP
+- Influence
+- Inventory
+- Tactic <BaseCard>
+- Conquests
+
+Map
+--
+- Tiles <Tile>
+- Layout <Shape Reference?>
+
+Tile
+--
+- Hexes <Hex>
+- City Tile
+- Advanced Tile
+- Revealed
+
+Hex
+--
+- Terrain Type
+- Adjacency Table
+- Site <Site>
+
+Site
+--
+- Type
+- Creep Type
+- Is Conquestable [Multi?]
+- Conquested By
+

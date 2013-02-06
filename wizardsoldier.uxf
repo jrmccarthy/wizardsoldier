@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.5.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>240</x>
+      <y>30</y>
+      <w>250</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>BaseDeck
+--
+- Gain()
+- Trash()
+- Shuffle()
+- Library &lt;undrawn cards&gt;
+- Hand &lt;drawn unplayed cards&gt;
+- Graveyard &lt;drawn played cards&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>120</x>
+      <y>420</y>
+      <w>240</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>GameState
+--
+- Players
+- CurrentPlayer
+- Map
+- Turn Order
+- Day/Night
+- Global Trash &lt;BaseDeck&gt;
+- Turn [?]
+- Extra Rules [?]
+- Common Skills &lt;BaseDeck&gt;
+- Spells &lt;BaseDeck&gt;
+- Advanced Actions &lt;BaseDeck&gt;
+- Relics &lt;BaseDeck&gt;
+- Units &lt;BaseDeck&gt;
+- Tactics &lt;BaseDeck&gt;
+- Enemies &lt;BaseDeck&gt;
+- Mana Source &lt;BaseDeck&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>20</x>
+      <y>200</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Map
+--
+- Tiles &lt;Tile&gt;
+- Layout &lt;Shape Reference?&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>20</x>
+      <y>30</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>BaseCard
+--
+- Render()
+- Play()
+- Play_Advanced()
+- Can_Play()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>20</x>
+      <y>290</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Tile
+--
+- Hexes &lt;Hex&gt;
+- City Tile
+- Advanced Tile
+- Revealed</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>250</x>
+      <y>200</y>
+      <w>210</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Hex
+--
+- Terrain Type
+- Adjacency Table
+- Site &lt;Site&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>250</x>
+      <y>300</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Site
+--
+- Type
+- Creep Type
+- Is Conquestable [Multi?]
+- Conquested By</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
