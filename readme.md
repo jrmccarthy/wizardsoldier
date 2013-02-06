@@ -1,1 +1,1 @@
-Digital port of the boardgame MageKnight, written with Lua + Moai.
+Turn based strategy game written with Lua + Moai.

@@ -1,0 +1,1014 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cont",
+				"content_type"
+			],
+			[
+				"component",
+				"component_name"
+			],
+			[
+				"compone",
+				"component_function"
+			],
+			[
+				"auth",
+				"authorization_action"
+			],
+			[
+				"in",
+				"inboundConnections"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"load",
+				"love.load"
+			],
+			[
+				"explosion",
+				"explosionImage"
+			],
+			[
+				"Gorilla",
+				"GorillaAnimation"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/tj.kells/dev/lua-knight/main.lua",
+			"settings":
+			{
+				"buffer_size": 3200,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/tj.kells/Library/Application Support/Sublime Text 2/Packages/User/moai.sublime-build",
+			"settings":
+			{
+				"buffer_size": 86,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "main.lua",
+			"settings":
+			{
+				"buffer_size": 1233,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tile.lua",
+			"settings":
+			{
+				"buffer_size": 588,
+				"line_ending": "Unix",
+				"name": "Tile = class('Tile')"
+			}
+		},
+		{
+			"contents": "require('lib/middleclass/middleclass')\n\nHex = class('Hex')\n\nfunction Hex:initialize( texture )\n	-- create a textured quad and initialize it\n	self.hexQuad = MOAIGfxQuad2D.new()\n	self.hexQuad:setTexture ( texture ) -- load an image to use as the quad’s texture\n	self.hexQuad:setRect ( -27, -24, 24, 24 ) -- set the world space dimensions of the quad\nend\n\nfunction Hex:setTerrainType( terrain )\n	if terrain != nil then\n		return terrain\n	end\n\n	terrainTypes = {\n		\"grass\"       --2\n		, \"hills\"     --3\n		, \"swamp\"     --3/5\n		, \"wasteland\" --4\n		, \"desert\"    --5/3\n		, \"water\"     -- X\n		, \"mountains\" -- X\n	}\n\n	return terrainTypes[ math.random(7) ]	\nend\n\nfunction Hex:setEnemyType( enemy )\n	enemyTypes = {\n		\n	}\nend",
+			"file": "hex.lua",
+			"file_size": 605,
+			"file_write_time": 1360193592000000,
+			"settings":
+			{
+				"buffer_size": 712,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/moai.sublime-build",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"sslua",
+				"Set Syntax: Lua"
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"sslu",
+				"Set Syntax: Lua"
+			],
+			[
+				"ssl",
+				"Set Syntax: Lua"
+			],
+			[
+				"git qc",
+				"Git: Quick Commit"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"ss lua",
+				"Set Syntax: Lua"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"svn comm",
+				"SVN: Commit…"
+			],
+			[
+				"svcomm",
+				"SVN: Commit…"
+			],
+			[
+				"git pull",
+				"Git: Pull"
+			],
+			[
+				"git log",
+				"Git: Log All"
+			],
+			[
+				"git statu",
+				"Git: Status"
+			],
+			[
+				"git check",
+				"Git: Checkout Current File"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"git rese",
+				"Git: Reset (hard) HEAD"
+			],
+			[
+				"rope",
+				"Rope: Import Assist"
+			],
+			[
+				"rope new",
+				"Rope: New Project"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"git show",
+				"Git: Show Current File"
+			],
+			[
+				"converttab",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"git blame",
+				"Set Syntax: Git Blame"
+			],
+			[
+				"set javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"convert tab",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"set json",
+				"Set Syntax: JSON"
+			],
+			[
+				"color",
+				"Color picker"
+			],
+			[
+				"install c",
+				"Package Control: Install Package"
+			],
+			[
+				"diff",
+				"FileDiffs: Menu"
+			],
+			[
+				"set lu",
+				"Set Syntax: Lua"
+			],
+			[
+				"git logc",
+				"Git: Log Current File"
+			],
+			[
+				"it stat",
+				"Git: Status"
+			],
+			[
+				"git pusch",
+				"Git: Push Current Branch"
+			],
+			[
+				"git pusc",
+				"Git: Push Current Branch"
+			],
+			[
+				"git diff",
+				"Git: Diff Current File"
+			],
+			[
+				"set xml",
+				"Set Syntax: XML"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"set syn lua",
+				"Set Syntax: Lua"
+			],
+			[
+				"git ch",
+				"Git: Change Branch"
+			],
+			[
+				"gitch",
+				"Git: Change Branch"
+			],
+			[
+				"gtch",
+				"Git: Change Branch"
+			],
+			[
+				"git br",
+				"Git: Change Branch"
+			],
+			[
+				"git pushc",
+				"Git: Push Current Branch"
+			],
+			[
+				"git pus",
+				"Git: Push Current Branch"
+			],
+			[
+				"git bran",
+				"Git: Change Branch"
+			],
+			[
+				"set html",
+				"Set Syntax: HTML"
+			],
+			[
+				"gt stat",
+				"Git: Status"
+			],
+			[
+				"git push c",
+				"Git: Push Current Branch"
+			],
+			[
+				"git log c",
+				"Git: Log Current File"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"git co",
+				"Git: Custom Command"
+			],
+			[
+				"git pulc",
+				"Git: Pull Current Branch"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/tj.kells/dev/lua-knight/moaigui/readme.txt",
+		"/Users/tj.kells/Documents/wizardsoldier/main.lua",
+		"/Users/tj.kells/Documents/wizardsoldier/.gitignore",
+		"/Users/tj.kells/Documents/wizardsoldier/Class_Model.txt",
+		"/Users/tj.kells/Documents/wizardsoldier/readme.md",
+		"/Users/tj.kells/Downloads/Adobe Illustrator CS6 16.0.0 Final (Eng Jpn)  Mac Os X [ChingLiu]/cracked/Adobe CS6 azr+ [k]/README.rtf",
+		"/Users/tj.kells/Downloads/Adobe Photoshop  CS6 [Mac] xCYBERPIRATENx/INSTRUCTIONS.rtf",
+		"/Users/tj.kells/Library/Application Support/Sublime Text 2/Packages/User/moai.sublime-build",
+		"/Users/tj.kells/dev/corvisacloud.com/root/static/js/wrapper.js",
+		"/Users/tj.kells/dev/corvisacloud.com/templates/wrapper.tt",
+		"/Developer/Examples/Panda3D/Asteroids/Tut-Asteroids.py",
+		"/var/folders/5y/5smm3_ks0t755pvp6wkd50ycqrq6kh/T/sublime-svn-1355508564/SVN",
+		"/var/folders/5y/5smm3_ks0t755pvp6wkd50ycqrq6kh/T/sublime-svn-1355451153/SVN",
+		"/Users/tj.kells/dev/django-cloud/lib/python2.7/site-packages/django/contrib/flatpages/urls.py",
+		"/Users/tj.kells/dev/django-cloud/corvisacloud/corvisacloud/urls.py",
+		"/Users/tj.kells/dev/django-cloud/corvisacloud/core/models.py",
+		"/Users/tj.kells/dev/django-cloud/corvisacloud/core/api/users.py",
+		"/Users/tj.kells/dev/django-cloud/corvisacloud/core/api/customer.py",
+		"/Users/tj.kells/dev/django-cloud/lib/python2.7/site-packages/django/contrib/auth/models.py",
+		"/Users/tj.kells/dev/django-cloud/corvisacloud/acd/models.py",
+		"/Users/tj.kells/dev/django-cloud/corvisacloud/core/views/auth.py",
+		"/Users/tj.kells/dev/django-cloud/corvisacloud/core/api/auth.py",
+		"/Users/tj.kells/dev/django-cloud/corvisacloud/core/managers.py",
+		"/Users/tj.kells/dev/django-cloud/corvisacloud/core/api/agent.py",
+		"/Users/tj.kells/dev/django-cloud/corvisacloud/corvisacloud/settings.py",
+		"/Users/tj.kells/dev/django-cloud/corvisacloud/corvisacloud/models.py",
+		"/Users/tj.kells/dev/django-cloud/corvisacloud/localsettings.py",
+		"/Users/tj.kells/dev/django-cloud/corvisacloud/visualbuilder/api.py",
+		"/Users/tj.kells/dev/django-cloud/lib/python2.7/site-packages/south/tests/non_managed/models.py",
+		"/Users/tj.kells/dev/django-cloud/corvisacloud/README.md",
+		"/Users/tj.kells/dev/django-cloud/requirements.txt",
+		"/Users/tj.kells/dev/corvisacloud/corvisacloud/corvisacloud/models.py",
+		"/Users/tj.kells/dev/corvisacloud/corvisacloud/corvisacloud/settings.py",
+		"/Volumes/homes/dev/braveheart/v2.0/class/Class.js",
+		"/Users/tj.kells/dev/ext-d3/index.html",
+		"/Volumes/tkells/dev/blackjack/mainline/templates/sandbox/designQuestion.tt",
+		"/Users/tj.kells/dev/angular-seed/app/index.html",
+		"/Users/tj.kells/dev/og-hawkthorne-journey/src/nodes/floor-old.lua",
+		"/Users/tj.kells/dev/goofyText/src/goofyTextBase.js",
+		"/Users/tj.kells/dev/something/conf.lua",
+		"/Users/tj.kells/dev/hawkthorne-journey/src/queue.lua",
+		"/Users/tj.kells/dev/hawkthorne-journey/src/maps/town.tmx",
+		"/Users/tj.kells/dev/hawkthorne-journey/src/vendor/hardoncollider/polygon.lua",
+		"/Users/tj.kells/dev/hawkthorne-journey/src/level.lua",
+		"/Users/tj.kells/dev/hawkthorne-journey/src/vendor/AdvTiledLoader/TileLayer.lua",
+		"/Users/tj.kells/dev/love-gorillas-refactor/gorilla.lua",
+		"/Users/tj.kells/dev/love-gorillas/.gitmodules",
+		"/Users/tj.kells/dev/love-gorillas/README",
+		"/Users/tj.kells/dev/love-gorillas/.gitignore",
+		"/Users/tj.kells/Downloads/TextInput/main.lua",
+		"/Users/tj.kells/dev/love-gorillas/TextInput.lua",
+		"/Users/tj.kells/dev/love-gorillas/class.lua",
+		"/Users/tj.kells/Downloads/TextInput/TextInput.lua",
+		"/Users/tj.kells/Downloads/TextInput.lua",
+		"/Users/tj.kells/Library/Application Support/Sublime Text 2/Packages/SublimeLove/Love.sublime-build",
+		"/Users/tj.kells/Library/Application Support/Sublime Text 2/Packages/User/Distraction Free.sublime-settings",
+		"/Volumes/tkells/dev/blackjack/qc/Changes"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/tj.kells/dev/django-cloud/",
+			"/Users/tj.kells/dev/django-cloud/corvisacloud",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Tile",
+			"mapLayer",
+			"[",
+			"hex1",
+			"mapLayer",
+			"hex5",
+			"hex4",
+			"hex2",
+			"hex3",
+			"hex2",
+			"hex2Quad",
+			"hex2Sprite",
+			"hex1Sprite",
+			"hex2Sprite",
+			"hex2Quad",
+			"hex1Sprite",
+			"hex1Quad",
+			"sprite",
+			"texturedQuad",
+			"screenHeight",
+			"mapText",
+			"text",
+			"mapLayer",
+			"layer",
+			"Layer",
+			"layer",
+			"640",
+			"screenWidth",
+			"960",
+			"screenHeight",
+			"app_id",
+			"permissions",
+			"app_id",
+			"appname",
+			"perms_for_user",
+			"None",
+			"name",
+			"None",
+			"component_name",
+			"description",
+			"component_name",
+			"component",
+			"user_perms",
+			"perms_for_user",
+			"get_object_list",
+			"dehydrate_name",
+			"content_type",
+			"permission",
+			"Permission",
+			"contenttype",
+			"content_type",
+			"print",
+			"override_urls",
+			"auth",
+			"Django",
+			"django",
+			"group",
+			"ManagePermissions",
+			"role",
+			"CorvisaSessionsAuthentication",
+			"testrunner",
+			"visualbuildertestrunner",
+			"UUIDField(primary_key=True,",
+			"media",
+			"Customer",
+			"Number",
+			"flow",
+			"variable",
+			"Site",
+			"site",
+			"Site",
+			"SessionAuthentication",
+			"MultiAuthentication",
+			"null",
+			"NodeType",
+			"posY",
+			"inboundConnections",
+			"node_name",
+			"\\/",
+			"nodes",
+			"Class",
+			"jsPlumb",
+			"Class",
+			"templatedata",
+			"dispositionTemplate",
+			"createClient",
+			"renderedHtml",
+			"sarathonline",
+			"collide",
+			"575",
+			"player",
+			"l",
+			"player.b",
+			"player.f",
+			"player.a",
+			"player.v",
+			"player.m",
+			"player.v ",
+			"player.v",
+			"player.u",
+			"MoveBoundingBox",
+			"Player",
+			"player",
+			"hawkthorne",
+			"height",
+			"speed",
+			"line",
+			"shape",
+			"solid",
+			"player",
+			"linde",
+			"255",
+			"rect",
+			"Rect",
+			"rect",
+			"Rect",
+			"rect",
+			" rect",
+			"rect",
+			"platform2",
+			"platform1",
+			"mouse",
+			"distance",
+			"polyline",
+			"polygon",
+			"jumpqueue",
+			"node.polyline",
+			"polygon"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/tj.kells/dev/lua-knight/main.lua",
+					"settings":
+					{
+						"buffer_size": 3200,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								892,
+								892
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeLove/Love.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/tj.kells/Library/Application Support/Sublime Text 2/Packages/User/moai.sublime-build",
+					"settings":
+					{
+						"buffer_size": 86,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								83,
+								3
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "main.lua",
+					"settings":
+					{
+						"buffer_size": 1233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								722,
+								722
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "tile.lua",
+					"settings":
+					{
+						"buffer_size": 588,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								584,
+								584
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Tile = class('Tile')",
+							"syntax": "Packages/Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "hex.lua",
+					"settings":
+					{
+						"buffer_size": 712,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								58,
+								58
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 160.0
+	},
+	"output.git":
+	{
+		"height": 203.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"readme",
+				"moaigui/readme.txt"
+			],
+			[
+				"main",
+				"main.lua"
+			],
+			[
+				"ma",
+				"main.lua"
+			],
+			[
+				"wrapper.js",
+				"root/static/js/wrapper.js"
+			],
+			[
+				"wrapper",
+				"templates/wrapper.tt"
+			],
+			[
+				"acdmodel",
+				"corvisacloud/acd/models.py"
+			],
+			[
+				"djangoconfurls",
+				"lib/python2.7/site-packages/django/contrib/flatpages/urls.py"
+			],
+			[
+				"urls",
+				"corvisacloud/corvisacloud/urls.py"
+			],
+			[
+				"coremodels",
+				"corvisacloud/core/models.py"
+			],
+			[
+				"coreviewsauth",
+				"corvisacloud/core/views/auth.py"
+			],
+			[
+				"contribauthmodels",
+				"lib/python2.7/site-packages/django/contrib/auth/models.py"
+			],
+			[
+				"apiat",
+				"corvisacloud/core/api/auth.py"
+			],
+			[
+				"views/",
+				"corvisacloud/core/views/auth.py"
+			],
+			[
+				"users",
+				"corvisacloud/core/api/users.py"
+			],
+			[
+				"agent",
+				"corvisacloud/core/api/agent.py"
+			],
+			[
+				"api/cus",
+				"corvisacloud/core/api/customer.py"
+			],
+			[
+				"managers",
+				"corvisacloud/core/managers.py"
+			],
+			[
+				"apiauth",
+				"corvisacloud/core/api/auth.py"
+			],
+			[
+				"api/mana",
+				"corvisacloud/core/api/manage.py"
+			],
+			[
+				"settings",
+				"corvisacloud/corvisacloud/settings.py"
+			],
+			[
+				"corvisacloud/models",
+				"corvisacloud/corvisacloud/models.py"
+			],
+			[
+				"corvisacloudmodels",
+				"corvisacloud/visualbuilder/models.py"
+			],
+			[
+				"visualmodels",
+				"corvisacloud/visualbuilder/models.py"
+			],
+			[
+				"manage/models",
+				"lib/python2.7/site-packages/south/tests/non_managed/models.py"
+			],
+			[
+				"coreapiusers",
+				"corvisacloud/core/api/users.py"
+			],
+			[
+				"url",
+				"corvisacloud/corvisacloud/urls.py"
+			],
+			[
+				"api.",
+				"corvisacloud/visualbuilder/api.py"
+			],
+			[
+				"require",
+				"requirements.txt"
+			],
+			[
+				"l",
+				"corvisacloud/localsettings.py"
+			],
+			[
+				"seting",
+				"corvisacloud/corvisacloud/settings.py"
+			],
+			[
+				"model",
+				"corvisacloud/corvisacloud/models.py"
+			],
+			[
+				"djhtml",
+				"corvisacloud/corvisacloud/templates/base.djhtml"
+			],
+			[
+				"index.html",
+				"templates/index.html"
+			],
+			[
+				"inde",
+				"index.py"
+			],
+			[
+				"class/clas",
+				"v2.0/class/Class.js"
+			],
+			[
+				"v2.0/jspl",
+				"v2.0/jsplumb.js"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"designquesi",
+				"mainline/templates/sandbox/designQuestion.tt"
+			],
+			[
+				"reviewquestion",
+				"mainline/root/static/js/Braveheart/v1.0/packages/QCR/ui/question/ReviewQuestion.js"
+			],
+			[
+				"questionbase",
+				"mainline/root/static/js/Braveheart/v1.0/packages/QCR/ui/question/QuestionBase.js"
+			],
+			[
+				"designquestion",
+				"mainline/root/static/js/Braveheart/v1.0/packages/QCR/ui/question/DesignQuestion.js"
+			],
+			[
+				"floor",
+				"src/nodes/floor.lua"
+			],
+			[
+				"level",
+				"src/level.lua"
+			],
+			[
+				"floor.",
+				"src/nodes/floor.lua"
+			],
+			[
+				"mia",
+				"src/main.lua"
+			],
+			[
+				"floo",
+				"src/nodes/floor.lua"
+			],
+			[
+				"town",
+				"src/maps/town.tmx"
+			],
+			[
+				"queue",
+				"src/queue.lua"
+			],
+			[
+				"player",
+				"src/player.lua"
+			],
+			[
+				"door",
+				"src/nodes/door.lua"
+			],
+			[
+				"polygon",
+				"src/vendor/hardoncollider/polygon.lua"
+			],
+			[
+				"town.tmx",
+				"src/maps/town.tmx"
+			],
+			[
+				"plae",
+				"src/player.lua"
+			],
+			[
+				"tilelayer",
+				"src/vendor/AdvTiledLoader/TileLayer.lua"
+			],
+			[
+				"",
+				"gorilla.lua"
+			],
+			[
+				"gitmo",
+				".gitmodules"
+			],
+			[
+				"gitig",
+				".gitignore"
+			],
+			[
+				"read",
+				"README"
+			],
+			[
+				"loader",
+				"src/loader.lua"
+			],
+			[
+				"rulelist",
+				"root/static/js/Blackjack/QC/RuleManager/RuleList.js"
+			],
+			[
+				"tkells.",
+				"templates/sandbox/tkells.tt"
+			],
+			[
+				"question.js",
+				"root/static/js/Braveheart/v1.0/packages/QCR/template/question.js"
+			],
+			[
+				"tkel",
+				"templates/sandbox/tkells.tt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

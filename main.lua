@@ -30,6 +30,8 @@ Tile1 = Tile:new(0,0,mapLayer)
 Tile2 = Tile:new(95,70,mapLayer)
 Tile3 = Tile:new(-95,-70,mapLayer)
 Tile3 = Tile:new(-120,35,mapLayer)
+Tile3 = Tile:new(-25,105,mapLayer)
+Tile3 = Tile:new(95,-70,mapLayer)
 
 tableauText = MOAITextBox.new()
 tableauText:setString('Tableau')

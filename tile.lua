@@ -1,4 +1,5 @@
-require('lib/middleclass/middleclass')
+require 'lib/middleclass/middleclass'
+require 'hex'
 
 Tile = class('Tile')
 
@@ -14,14 +15,12 @@ function Tile:initialize( tileX, tileY, tileLayer )
 	}
 
 	for i=1,7 do
-		-- create a textured quad and initialize it
-		hexQuad = MOAIGfxQuad2D.new()
-		hexQuad:setTexture ( string.format('assets/images/hex%s.png', i )) -- load an image to use as the quad’s texture
-		hexQuad:setRect ( -27, -24, 24, 24 ) -- set the world space dimensions of the quad
+		texture = string.format('assets/images/hex%s.png', i )
+		hex = Hex:new(texture) -- load an image to use as the quad’s texture
 
 		-- create a sprite and initialize it
 		hexSprite = MOAIProp2D.new ()
-		hexSprite:setDeck ( hexQuad )
+		hexSprite:setDeck ( hex.hexQuad )
 		hexSprite:setLoc( tileX - hexLocs[i][1], tileY - hexLocs[i][2] )
 
 		tileLayer:insertProp(hexSprite)
