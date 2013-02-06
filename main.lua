@@ -17,7 +17,7 @@ MOAISim.pushRenderPass(layer)
 chars = 'HELOWRD'
 
 font = MOAIFont.new()
-font:loadFromTTF('arialbd.ttf',chars,120,72)
+font:loadFromTTF('assets/arialbd.ttf',chars,120,72)
 
 
 text = MOAITextBox.new()
@@ -27,5 +27,6 @@ text:setTextSize(120,72)
 text:setYFlip(true)
 text:setRect(-400,-300,400,300)
 text:setAlignment(MOAITextBox.CENTER_JUSTIFY,MOAITextBox.CENTER_JUSTIFY)
+text:spool()
 
 layer:insertProp(text)
