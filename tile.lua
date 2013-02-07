@@ -6,17 +6,16 @@ Tile = class('Tile')
 function Tile:initialize( tileX, tileY, tileLayer )
 	local hexLocs = {
 		{0,0}
-		,{48,0}
-		,{72,-36}
-		,{48,-72}
+		,{40,0}
+		,{62,-37}
+		,{40,-72}
 		,{0,-72}
-		,{-24,-36}
-		,{24,-36}
+		,{-20,-37}
+		,{20,-37}
 	}
 
 	for i=1,7 do
-		texture = string.format('assets/images/hex%s.png', i )
-		hex = Hex:new(texture) -- load an image to use as the quad’s texture
+		hex = Hex:new(i)
 
 		-- create a sprite and initialize it
 		hexSprite = MOAIProp2D.new ()

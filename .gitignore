@@ -1,5 +1,5 @@
 .DS_Store
 .swp
 .project
-.sublime-project
-.sublime-workspace
+*.sublime-project
+*.sublime-workspace
