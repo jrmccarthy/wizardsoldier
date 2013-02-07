@@ -1,13 +1,13 @@
 require('lib/middleclass/middleclass')
-require('library')
+require('cardcontainer')
 
 BaseDeck = class("BaseDeck")
 
 --Base class that other decks can inherit from
 function BaseDeck:initialize()
-	self.library = Library:new()
-	self.hand = {}
-	self.graveyard = {}
+	self.library = CardContainer:new()
+	self.hand = CardContainer:new()
+	self.graveyard = CardContainer:new()
 end
 
 function BaseDeck:gain( card, location, order )
@@ -20,16 +20,17 @@ function BaseDeck:gain( card, location, order )
 end
 
 --Trash a card from a location
-function BaseDeck:trash( card, location )
-	assert(card ~= nil, "Must specify a card")
+function BaseDeck:trash( index, location )
 	assert(location ~= nil, "Must specify a location")
+	assert(index ~= nil, "Must specify a card")
 
 	--Remove the card from the location?
-	-- TODO
+	self[location]:trash(index)
 end
 
 function BaseDeck:shuffle( location )
 	location = location or "library"
+	
 	--Redo ordering of that location
 	self[location]:shuffle()
 end
