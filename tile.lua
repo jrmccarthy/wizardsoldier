@@ -21,7 +21,7 @@ function Tile:initialize( tileX, tileY, tileLayer )
 		-- create a sprite and initialize it
 		hexSprite = MOAIProp2D.new ()
 		hexSprite:setDeck ( hex.hexQuad )
-		hexSprite:setLoc( tileX - hexLocs[i][1], tileY - hexLocs[i][2] )
+		hexSprite:setLoc( tileX + hexLocs[i][1], tileY + hexLocs[i][2] )
 
 		tileLayer:insertProp(hexSprite)
 	end
