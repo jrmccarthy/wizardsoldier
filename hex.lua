@@ -31,8 +31,8 @@ end
 
 --Apply a site type to this hex. If no site type is passed, generate one.
 function Hex:setSiteType( site )
-	if enemy ~= nil then
-		return enemy
+	if site ~= nil then
+		return site
 	end
 
 	siteTypes = {
@@ -47,5 +47,5 @@ function Hex:setSiteType( site )
 		, "mine"
 		, "fountain"
 	}
-	return enemyTypes[ math.random(7) ]
+	return siteTypes[ math.random(10) ]
 end
