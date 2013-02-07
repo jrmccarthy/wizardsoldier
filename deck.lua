@@ -35,5 +35,16 @@ function BaseDeck:shuffle( location )
 	self[location]:shuffle()
 end
 
+--Convenience function to draw a card from library to hand
+function BaseDeck:draw()
+	self:movecard("library", "hand", 1, "top")
+end
+
+--Move a card from one location to another
+function BaseDeck:movecard( from_loc, to_loc, from_index, to_pos )
+	card = self[from_loc]:pop(from_index)
+
+	self[to_loc]:gain(card, to_pos)
+end
 
 
