@@ -1,6 +1,7 @@
-require('lib/middleclass/middleclass')
+local Hex = class('Hex')
 
-Hex = class('Hex')
+Hex.quadHeight = 25
+Hex.quadWidth = 25
 
 function Hex:initialize( locationIndex )
 	texture = string.format('assets/images/hex%s.png', locationIndex )
@@ -47,5 +48,12 @@ function Hex:setSiteType( site )
 		, "mine"
 		, "fountain"
 	}
+<<<<<<< HEAD
 	return siteTypes[ math.random(10) ]
 end
+=======
+	return enemyTypes[ math.random(7) ]
+end
+
+return Hex
+>>>>>>> Hex Alignment

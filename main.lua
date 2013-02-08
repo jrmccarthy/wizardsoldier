@@ -1,4 +1,6 @@
-require "tile"
+require('lib/middleclass/middleclass')
+
+Map = require "map"
 
 screenWidth = MOAIEnvironment.screenWidth
 screenHeight = MOAIEnvironment.screenHeight
@@ -26,9 +28,8 @@ font = MOAIFont.new()
 font:loadFromTTF('assets/arialbd.ttf',chars,120,72)
 
 --Draw some tiles
-Tile1 = Tile:new(0,0,mapLayer)
-Tile2 = Tile:new(83,73,mapLayer)
-Tile3 = Tile:new(-21,110,mapLayer)
+
+myMap = Map:new(5,"wedge",mapLayer)
 
 tableauText = MOAITextBox.new()
 tableauText:setString('Tableau')
