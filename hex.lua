@@ -48,12 +48,7 @@ function Hex:setSiteType( site )
 		, "mine"
 		, "fountain"
 	}
-<<<<<<< HEAD
 	return siteTypes[ math.random(10) ]
-end
-=======
-	return enemyTypes[ math.random(7) ]
 end
 
 return Hex
->>>>>>> Hex Alignment
