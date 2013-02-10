@@ -56,6 +56,8 @@ tableau_layer:insertProp(tableau_text)
 
 map_viewport.offsetX = 0
 map_viewport.offsetY = 0
+map_viewport.scaleFactor = 1
+
 MOAIInputMgr.device.keyboard:setCallback(
     function(key,down)
         if down==true then
@@ -71,9 +73,13 @@ MOAIInputMgr.device.keyboard:setCallback(
         	elseif string.char(tostring(key)) == 'd' then
         		map_viewport.offsetX = map_viewport.offsetX + 0.2
         		map_viewport:setOffset(map_viewport.offsetX,map_viewport.offsetY)
+	        elseif key == 61 then-- 'plus' sign
+                map_viewport.scaleFactor = map_viewport.scaleFactor - 0.1
+	        	map_viewport:setScale(screen_width * map_viewport.scaleFactor,screen_height * map_viewport.scaleFactor)
+            elseif key == 45 then-- 'minus' sign
+                map_viewport.scaleFactor = map_viewport.scaleFactor + 0.1
+                map_viewport:setScale(screen_width * map_viewport.scaleFactor,screen_height * map_viewport.scaleFactor)
 	        end
         end
     end
 )
-
-map_layer:insertProp(debug_text)
