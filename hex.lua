@@ -2,6 +2,7 @@ local Hex = class('Hex')
 
 Hex.quadHeight = 25
 Hex.quadWidth = 25
+Hex.width = math.cos(30) * Hex.quadWidth
 
 function Hex:initialize( locationIndex )
 	texture = string.format('assets/images/hex%s.png', locationIndex )

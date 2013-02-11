@@ -1,6 +1,9 @@
 require('lib/middleclass/middleclass')
 Map = require "map"
 
+--Globals
+cos30deg = (math.cos(30 * (math.pi/180)))
+
 font = MOAIFont.new()
 font:loadFromTTF('assets/arialbd.ttf',"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",120,72)
 
@@ -13,12 +16,12 @@ if screen_height == nil then screen_height = 640 end
 MOAISim.openWindow("Wizard Soldier v0.01",screen_width,screen_height)
 
 map_viewport = MOAIViewport.new()
-map_viewport:setSize(screen_width,screen_height)
-map_viewport:setScale(screen_width,screen_height)
+map_viewport:setSize(screen_width,screen_height * 0.66)
+map_viewport:setScale(screen_width,screen_height * 0.66)
 
 tableau_viewport = MOAIViewport.new()
-tableau_viewport:setSize(screen_width,screen_height*0.10)
-tableau_viewport:setScale(screen_width,screen_height*0.10)
+tableau_viewport:setSize(screen_width,screen_height*0.33)
+tableau_viewport:setScale(screen_width,screen_height*0.33)
 
 map_layer = MOAILayer2D.new()
 map_layer:setViewport(map_viewport)
@@ -29,7 +32,6 @@ tableau_layer:setViewport(tableau_viewport)
 layers = {}
 table.insert(layers, map_layer)
 table.insert(layers, tableau_layer)
-
 
 MOAIRenderMgr.setRenderTable(layers)
 
@@ -42,13 +44,15 @@ myMap = Map:new(5,"wedge",map_layer)
 -- myImage = MOAIProp2D.new()
 -- myImage:setDeck(myQuad)
 -- myImage:setLoc(0,0)
+
 tableau_layer:insertProp(myImage)
 
 tableau_text = MOAITextBox.new()
 tableau_text:setString('Tableau')
 tableau_text:setFont(font)
+tableau_text:setYFlip(true)
 tableau_text:setTextSize(120,72)
-tableau_text:setRect(0,200,640,-300)
+tableau_text:setRect(-400,-300,400,300)
 tableau_text:setAlignment(MOAITextBox.CENTER_JUSTIFY,MOAITextBox.CENTER_JUSTIFY)
 tableau_text:spool()
 
