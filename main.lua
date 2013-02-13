@@ -1,59 +1,49 @@
 require('lib/middleclass/middleclass')
-Map = require "map"
+local Map = require "map"
 
 --Globals
 cos30deg = (math.cos(30 * (math.pi/180)))
 
-font = MOAIFont.new()
+local font = MOAIFont.new()
 font:loadFromTTF('assets/arialbd.ttf',"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",120,72)
 
-screen_width = MOAIEnvironment.screen_width
-screen_height = MOAIEnvironment.screen_height
+local screen_width = MOAIEnvironment.horizontalResolution
+local screen_height = MOAIEnvironment.verticalResolution
 
 if screen_width == nil then screen_width = 960 end
 if screen_height == nil then screen_height = 640 end
 
 MOAISim.openWindow("Wizard Soldier v0.01",screen_width,screen_height)
 
-map_viewport = MOAIViewport.new()
-map_viewport:setSize(screen_width,screen_height * 0.66)
-map_viewport:setScale(screen_width,screen_height * 0.66)
+local map_viewport = MOAIViewport.new()
+map_viewport:setSize(screen_width,screen_height)
+map_viewport:setScale(screen_width,screen_height)
 
-tableau_viewport = MOAIViewport.new()
-tableau_viewport:setSize(screen_width,screen_height*0.33)
-tableau_viewport:setScale(screen_width,screen_height*0.33)
+local tableau_viewport = MOAIViewport.new()
+tableau_viewport:setSize(screen_width,screen_height)
+tableau_viewport:setScale(screen_width,screen_height)
 
-map_layer = MOAILayer2D.new()
+local map_layer = MOAILayer2D.new()
 map_layer:setViewport(map_viewport)
 
-tableau_layer = MOAILayer2D.new()
+local tableau_layer = MOAILayer2D.new()
 tableau_layer:setViewport(tableau_viewport)
 
-layers = {}
+local layers = {}
 table.insert(layers, map_layer)
 table.insert(layers, tableau_layer)
 
 MOAIRenderMgr.setRenderTable(layers)
 
-myMap = Map:new(5,"wedge",map_layer)
+GameMap = Map:new(5,"wedge",map_layer)
 
--- myQuad = MOAIGfxQuad2D.new()
--- myQuad:setTexture("assets/images/turtle.png")
--- myQuad:setRect(-25, -25, 25, 25)
-
--- myImage = MOAIProp2D.new()
--- myImage:setDeck(myQuad)
--- myImage:setLoc(0,0)
-
-tableau_layer:insertProp(myImage)
-
-tableau_text = MOAITextBox.new()
+local tableau_text = MOAITextBox.new()
 tableau_text:setString('Tableau')
 tableau_text:setFont(font)
 tableau_text:setYFlip(true)
 tableau_text:setTextSize(120,72)
-tableau_text:setRect(-400,-300,400,300)
-tableau_text:setAlignment(MOAITextBox.CENTER_JUSTIFY,MOAITextBox.CENTER_JUSTIFY)
+tableau_text:setRect( -400, screen_height * -1, 400, screen_height - 420 * -1 )
+tableau_text:setAlignment(MOAITextBox.CENTER_JUSTIFY)
 tableau_text:spool()
 
 tableau_layer:insertProp(tableau_text)
@@ -77,13 +67,15 @@ MOAIInputMgr.device.keyboard:setCallback(
         	elseif string.char(tostring(key)) == 'd' then
         		map_viewport.offsetX = map_viewport.offsetX + 0.2
         		map_viewport:setOffset(map_viewport.offsetX,map_viewport.offsetY)
-	        elseif key == 61 then-- 'plus' sign
+	        elseif key == 61 then -- 'plus' key
                 map_viewport.scaleFactor = map_viewport.scaleFactor - 0.1
 	        	map_viewport:setScale(screen_width * map_viewport.scaleFactor,screen_height * map_viewport.scaleFactor)
-            elseif key == 45 then-- 'minus' sign
+            elseif key == 45 then -- 'minus' key
                 map_viewport.scaleFactor = map_viewport.scaleFactor + 0.1
                 map_viewport:setScale(screen_width * map_viewport.scaleFactor,screen_height * map_viewport.scaleFactor)
-	        end
+	        elseif key == 27 then -- 'escape' key
+                os.exit()
+            end
         end
     end
 )
