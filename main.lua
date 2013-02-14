@@ -42,7 +42,7 @@ tableau_text:setString('Tableau')
 tableau_text:setFont(font)
 tableau_text:setYFlip(true)
 tableau_text:setTextSize(120,72)
-tableau_text:setRect( -400, screen_height * -1, 400, screen_height - 420 * -1 )
+tableau_text:setRect(-400,screen_height * -1,400,-192)
 tableau_text:setAlignment(MOAITextBox.CENTER_JUSTIFY)
 tableau_text:spool()
 
