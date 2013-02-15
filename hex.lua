@@ -6,14 +6,21 @@ Hex.width = math.cos(30) * Hex.quadWidth
 
 function Hex:initialize( locationIndex )
 	self.texturePath = "assets/images/"
+	self.flipped = false
+
 	self:setTerrainType()
 	self:setSiteType()
 
-	texture = string.format('%shex%s.png', self.texturePath, locationIndex )
+	texture = string.format('%shex_blank.png', self.texturePath, locationIndex )
 	-- create a textured quad and initialize it
 	self.hexQuad = MOAIGfxQuad2D.new()
 	self.hexQuad:setTexture ( texture ) -- load an image to use as the quad’s texture
 	self.hexQuad:setRect ( -25, -25, 25, 25 ) -- set the world space dimensions of the quad
+end
+
+function Hex:flip()
+	-- FIXME set the texture to the terraintype texture
+	self.hexQuad:setTexture ( '/assets/images/hex_grass.png' )
 end
 
 --Apply a terrain type to this hex. If no site type is passed, generate one.

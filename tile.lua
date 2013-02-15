@@ -14,11 +14,18 @@ function Tile:initialize( x, y, tileLayer )
 		,{ cos30deg / 2, -0.75 }
 	}
 
+	self.hexes = {}
 	self.x = x
 	self.y = y
 	self.layer = tileLayer
 
 	self:generateHexes()
+end
+
+function Tile:flip()
+	 for hex,v in ipairs(self.hexes) do
+	 	hex:flip()
+	 end
 end
 
 function Tile:generateHexes()
@@ -31,6 +38,10 @@ function Tile:generateHexes()
 			self.x + (self.hexOffsets[i][1] * (hex.quadHeight * 2) )
 			, self.y + (self.hexOffsets[i][2]  * (hex.quadHeight * 2) )
 		)
+
+		hex.tilePosition = i
+
+		table.insert(hex, hexes)
 
 		self.layer:insertProp(hexSprite)
 	end
