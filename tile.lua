@@ -2,9 +2,9 @@ Hex = require 'hex'
 
 local Tile = class('Tile')
 
-function Tile:initialize( tileX, tileY, tileLayer )
+function Tile:initialize( x, y, tileLayer )
 	--Offset factor of each hex relative to its parent tile.
-	local hexOffsets = {
+	self.hexOffsets = {
 		{ 0,0 }
 		,{ cos30deg,0 }
 		,{ cos30deg * 1.5, -0.75 }
@@ -14,17 +14,25 @@ function Tile:initialize( tileX, tileY, tileLayer )
 		,{ cos30deg / 2, -0.75 }
 	}
 
+	self.x = x
+	self.y = y
+	self.layer = tileLayer
+
+	self:generateHexes()
+end
+
+function Tile:generateHexes()
 	for i=1,7 do
 		hex = Hex:new(i)
 		-- create a sprite and initialize it
 		hexSprite = MOAIProp2D.new ()
 		hexSprite:setDeck ( hex.hexQuad )
 		hexSprite:setLoc(
-			tileX + (hexOffsets[i][1] * (hex.quadHeight * 2) )
-			, tileY + (hexOffsets[i][2]  * (hex.quadHeight * 2) )
+			self.x + (self.hexOffsets[i][1] * (hex.quadHeight * 2) )
+			, self.y + (self.hexOffsets[i][2]  * (hex.quadHeight * 2) )
 		)
 
-		tileLayer:insertProp(hexSprite)
+		self.layer:insertProp(hexSprite)
 	end
 end
 
