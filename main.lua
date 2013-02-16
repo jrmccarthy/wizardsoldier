@@ -35,7 +35,7 @@ table.insert(layers, tableau_layer)
 
 MOAIRenderMgr.setRenderTable(layers)
 
-GameMap = Map:new(6,"wedge",map_layer)
+GameMap = Map:new(5,"wedge",map_layer)
 
 local tableau_text = MOAITextBox.new()
 tableau_text:setString('Tableau')

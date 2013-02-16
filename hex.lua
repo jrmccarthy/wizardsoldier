@@ -19,8 +19,9 @@ function Hex:initialize( locationIndex )
 end
 
 function Hex:flip()
+	print(self.terrainType[2])
 	-- FIXME set the texture to the terraintype texture
-	self.hexQuad:setTexture ( '/assets/images/hex_grass.png' )
+	self.hexQuad:setTexture ( self.terrainType[2] )
 end
 
 --Apply a terrain type to this hex. If no site type is passed, generate one.

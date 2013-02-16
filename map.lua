@@ -6,8 +6,16 @@ function Map:initialize( rowCount, pattern, mapLayer )
 	self.rowCount = rowCount
 	self.pattern = pattern
 	self.mapLayer = mapLayer
+	self.tiles = {}
 
 	self:draw()
+end
+
+function Map:flipAllTiles()
+
+	for k,tile in pairs(self.tiles) do
+		tile:flip()
+	end
 end
 
 function Map:draw()
@@ -34,6 +42,7 @@ function Map:draw()
 			per_row = per_row + 1
 		end
 	end
+	self:flipAllTiles()
 end
 
 --Annoying helper class because i cant abuse references like python
@@ -50,51 +59,54 @@ end
 
 --Draw the first tile, and return the location you were given
 function Map:draw_origin( posx, posy )
-	local Tile1 = Tile:new(
+	local tile = Tile:new(
 			posx
 			, posy
 			, self.mapLayer
 		)
-	return Tile1.x, Tile1.y
+	table.insert(self.tiles, tile)
+	return tile.x, tile.y
 end
 
 --Draw a tile that starts a new row (so, south east) in the wedge
 function Map:draw_new_row( posx, posy )
-	local Tile1
+	local tile
 	if self.pattern == 'wedge' then
-		Tile1 = Tile:new(
+		tile = Tile:new(
 				5 * cos30deg * 25 + posx
 				,  -1.5 * 25 + posy
 				, self.mapLayer
 			)
 	end
-	return Tile1.x, Tile1.y
+	table.insert(self.tiles, tile)
+	return tile.x, tile.y
 end
 
 --Draw a tile that continues the current row (so, south west) in the wedge
 function Map:draw_next_in_row( posx, posy )
-	local Tile1
+	local tile
 	if self.pattern == 'wedge' then
-		Tile1 = Tile:new(
+		tile = Tile:new(
 				-4 * cos30deg * 25 + posx -- X
 				, -3 * 25 + posy       -- Y
 				, self.mapLayer        -- Render Layer
 			)
 	end
-	return Tile1.x, Tile1.y
+	table.insert(self.tiles, tile)
+	return tile.x, tile.y
 end
 
 --Note: This function will be useful for drawing the Column, but not the wedge
 -- function Map:draw_next_in_row( posx, posy )
--- 	local Tile1
+-- 	local tile
 -- 	if self.pattern == 'wedge' then
--- 		Tile1 = Tile:new(
+-- 		tile = Tile:new(
 -- 				cos30deg * 25 + posx
 -- 				, -4.5 * 25 + posy
 -- 				, self.mapLayer
 -- 			)
 -- 	end
--- 	return Tile1.x, Tile1.y
+-- 	return tile.x, tile.y
 -- end
 
 return Map

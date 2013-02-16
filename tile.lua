@@ -23,7 +23,8 @@ function Tile:initialize( x, y, tileLayer )
 end
 
 function Tile:flip()
-	 for hex,v in ipairs(self.hexes) do
+	print('TILE FLIP')
+	 for k,hex in ipairs(self.hexes) do
 	 	hex:flip()
 	 end
 end
@@ -41,7 +42,7 @@ function Tile:generateHexes()
 
 		hex.tilePosition = i
 
-		table.insert(hex, hexes)
+		table.insert(self.hexes, hex)
 
 		self.layer:insertProp(hexSprite)
 	end
