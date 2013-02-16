@@ -28,19 +28,20 @@ end
 function Hex:setTerrainType( terrain )
 	terrainTypes = {
 		{"grass",string.format('%shex_%s.png', self.texturePath, "grass")}
+		, {"forest",string.format('%shex_%s.png', self.texturePath, "forest")}
 		, {"hills",string.format('%shex_%s.png', self.texturePath, "hills")}
 		, {"swamp",string.format('%shex_%s.png', self.texturePath, "swamp")}
 		, {"wasteland",string.format('%shex_%s.png', self.texturePath, "wasteland")}
 		, {"desert",string.format('%shex_%s.png', self.texturePath, "desert")}
 		, {"water",string.format('%shex_%s.png', self.texturePath, "water")}
-		, {"mountains",string.format('%shex_%s.png', self.texturePath, "mountains")}
+		, {"mountains",string.format('%shex_%s.png', self.texturePath, "mountain")}
 	}
 
 	if terrain ~= nil then
 		return terrain[terrain]
 	end
 
-	self.terrainType = terrainTypes[ math.random(7) ]
+	self.terrainType = terrainTypes[ math.random(8) ]
 end
 
 --Apply a site type to this hex. If no site type is passed, generate one.
