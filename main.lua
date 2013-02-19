@@ -26,27 +26,24 @@ tableau_viewport:setScale(screen_width,screen_height)
 local map_layer = MOAILayer2D.new()
 map_layer:setViewport(map_viewport)
 
-local tableau_layer = MOAILayer2D.new()
-tableau_layer:setViewport(tableau_viewport)
+local tableauLayer = MOAILayer2D.new()
+tableauLayer:setViewport(tableau_viewport)
 
 local layers = {}
 table.insert(layers, map_layer)
-table.insert(layers, tableau_layer)
+table.insert(layers, tableauLayer)
 
 MOAIRenderMgr.setRenderTable(layers)
 
 GameMap = Map:new(5,"wedge",map_layer)
 
-local tableau_text = MOAITextBox.new()
-tableau_text:setString('Tableau')
-tableau_text:setFont(font)
-tableau_text:setYFlip(true)
-tableau_text:setTextSize(120,72)
-tableau_text:setRect(-400,screen_height * -1,400,-192)
-tableau_text:setAlignment(MOAITextBox.CENTER_JUSTIFY)
-tableau_text:spool()
-
-tableau_layer:insertProp(tableau_text)
+local tableQuad = MOAIGfxQuad2D.new()
+tableQuad:setTexture ( 'assets/images/wood.png' ) -- load an image to use as the quad’s texture
+tableQuad:setRect ( 0, 0, 960, 200 ) -- set the world space dimensions of the quad
+tableSprite = MOAIProp2D.new ()
+tableSprite:setDeck ( tableQuad )
+tableSprite:setLoc( (screen_width /2 ) * -1, -320)
+tableauLayer:insertProp(tableSprite)
 
 map_viewport.offsetX = 0
 map_viewport.offsetY = 0
