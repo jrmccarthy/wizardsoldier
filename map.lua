@@ -2,6 +2,8 @@ Tile = require 'tile'
 
 local Map = class('Map')
 
+local TILES_PER_ROW = 3
+
 function Map:initialize( rowCount, pattern, mapLayer )
 	self.rowCount = rowCount
 	self.pattern = pattern
@@ -41,6 +43,19 @@ function Map:draw()
 			drawstyle = 'draw_new_row'
 			per_row = per_row + 1
 		end
+	elseif self.pattern == 'column' then
+		--Basically the same above, except we always have 3 tiles per row and we start rows slightly differently
+		per_row = TILES_PER_ROW
+		for row=1, self.rowCount do
+			posx, posy = self:_draw_tile( drawstyle, rposx, rposy )
+			rposx, rposy = posx, posy
+			drawstyle = 'draw_next_in_row'
+			for tile=2, per_row do
+				posx, posy = self:_draw_tile( drawstyle, posx, posy )
+				drawstyle = 'draw_next_in_row'
+			end
+			drawstyle = 'draw_new_row'
+		end
 	end
 	self:flipAllTiles()
 end
@@ -68,24 +83,36 @@ function Map:draw_origin( posx, posy )
 	return tile.x, tile.y
 end
 
---Draw a tile that starts a new row (so, south east) in the wedge
+--Draw a tile that starts a new row (so, south east in the wedge or south maybe in the column)
 function Map:draw_new_row( posx, posy )
 	local tile
 	if self.pattern == 'wedge' then
 		tile = Tile:new(
-				5 * cos30deg * 25 + posx
-				,  -1.5 * 25 + posy
-				, self.mapLayer
+				5 * cos30deg * 25 + posx -- X
+				,  -1.5 * 25 + posy      -- Y
+				, self.mapLayer          -- Render Layer
+			)
+	elseif self.pattern == 'column' then
+		tile = Tile:new(
+				cos30deg * 25 + posx   -- X
+				, -4.5 * 25 + posy     -- Y
+				, self.mapLayer        -- Render Layer
 			)
 	end
 	table.insert(self.tiles, tile)
 	return tile.x, tile.y
 end
 
---Draw a tile that continues the current row (so, south west) in the wedge
+--Draw a tile that continues the current row (so, south west)
 function Map:draw_next_in_row( posx, posy )
 	local tile
 	if self.pattern == 'wedge' then
+		tile = Tile:new(
+				-4 * cos30deg * 25 + posx -- X
+				, -3 * 25 + posy       -- Y
+				, self.mapLayer        -- Render Layer
+			)
+	elseif self.pattern == 'column' then
 		tile = Tile:new(
 				-4 * cos30deg * 25 + posx -- X
 				, -3 * 25 + posy       -- Y
@@ -95,18 +122,5 @@ function Map:draw_next_in_row( posx, posy )
 	table.insert(self.tiles, tile)
 	return tile.x, tile.y
 end
-
---Note: This function will be useful for drawing the Column, but not the wedge
--- function Map:draw_next_in_row( posx, posy )
--- 	local tile
--- 	if self.pattern == 'wedge' then
--- 		tile = Tile:new(
--- 				cos30deg * 25 + posx
--- 				, -4.5 * 25 + posy
--- 				, self.mapLayer
--- 			)
--- 	end
--- 	return tile.x, tile.y
--- end
 
 return Map
